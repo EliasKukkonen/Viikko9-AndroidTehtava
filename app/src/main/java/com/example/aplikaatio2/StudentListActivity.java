@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import java.util.Collections;
+
 public class StudentListActivity extends AppCompatActivity {
 
     private UserStorage storage;
@@ -21,6 +23,8 @@ public class StudentListActivity extends AppCompatActivity {
         storage = UserStorage.getInstance();
 
         recyclerView = findViewById(R.id.rvUserList);
+
+        Collections.sort(UserStorage.getInstance().getUsers(), (user1, user2) -> user1.getLastName().compareTo(user2.getLastName()));
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

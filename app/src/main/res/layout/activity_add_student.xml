@@ -77,8 +77,8 @@
 
         <RadioButton
             android:id="@+id/radioButtonLate"
-            android:layout_width="332dp"
-            android:layout_height="45dp"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Laskennallinen tekniikka" />
 
@@ -111,63 +111,53 @@
             android:id="@+id/radioButtonKuva1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kuva 1" />
+            android:text="Mies" />
 
         <RadioButton
             android:id="@+id/radioButtonKuva2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kuva2" />
+            android:text="Nainen" />
     </RadioGroup>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="114dp"
-        android:layout_height="215dp"
-        android:layout_marginStart="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <CheckBox
+        android:id="@+id/checkBoxDippa"
+        android:layout_width="132dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="36dp"
+        android:text="Diplomi-insinöörin tutkinto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.823"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgImageGroup"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/stockman" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxKandi" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kuva 2"
-        android:textColor="#000000"
-        android:textStyle="bold"
+    <CheckBox
+        android:id="@+id/checkBoxTohtori"
+        android:layout_width="137dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:text="Tekniikan tohtorin tutkinto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.64"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxDippa" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kuva1"
-        android:textColor="#070707"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <CheckBox
+        android:id="@+id/checkBoxKandi"
+        android:layout_width="131dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="36dp"
+        android:text="kandidaatin tutkinto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.962"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.258" />
+        app:layout_constraintTop_toBottomOf="@+id/rgImageGroup" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="123dp"
-        android:layout_height="153dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <CheckBox
+        android:id="@+id/checkBoxUinti"
+        android:layout_width="116dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:text="Uimamasteri"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/stockwomann" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTohtori" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,11 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import java.util.ArrayList;
+
 public class AddStudentActivity extends AppCompatActivity {
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,12 @@ public class AddStudentActivity extends AppCompatActivity {
         String sahkari = Email.getText().toString();
         String Tutkinto = null;
         int addImage = 0;
+
+
+        CheckBox checkBoxkandi = findViewById(R.id.checkBoxKandi);
+        CheckBox checkBoxInssi = findViewById(R.id.checkBoxDippa);
+        CheckBox checkBoxTohtori = findViewById(R.id.checkBoxTohtori);
+        CheckBox checkBoxUima = findViewById(R.id.checkBoxUinti);
 
 
         RadioGroup rgUserType = findViewById(R.id.rgUserType);
@@ -65,10 +77,24 @@ public class AddStudentActivity extends AppCompatActivity {
 
 
         }
+        ArrayList<String> selectedCheckboxes = new ArrayList<String>();
+        if(checkBoxkandi.isChecked()){
+            selectedCheckboxes.add(checkBoxkandi.getText().toString());
+        }
+        if(checkBoxInssi.isChecked()){
+            selectedCheckboxes.add(checkBoxInssi.getText().toString());
+        }
+        if(checkBoxTohtori.isChecked()){
+            selectedCheckboxes.add(checkBoxTohtori.getText().toString());
+        }
+        if(checkBoxUima.isChecked()){
+            selectedCheckboxes.add(checkBoxUima.getText().toString());
+        }
 
 
 
 UserStorage.getInstance().addStudentToList(new User(Etunimi, Sukunimi, sahkari, Tutkinto, addImage));
+UserStorage.getInstance().saveUsers(this);
 
     }
 }
